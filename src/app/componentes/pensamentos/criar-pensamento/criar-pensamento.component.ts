@@ -12,10 +12,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CriarPensamentoComponent implements OnInit {
 
   pensamento: Pensamento = {
-
     conteudo: '',
     autoria: '',
-    modelo: 'modelo2'
+    modelo: 'modelo2',
+    favorito: false
   }
 
   formulario: FormGroup;
@@ -36,7 +36,8 @@ export class CriarPensamentoComponent implements OnInit {
         Validators.required,
         Validators.minLength(3)
       ])],
-      modelo: ['modelo1']
+      modelo: ['modelo1'],
+      favorito: [false]
     })
   }
 

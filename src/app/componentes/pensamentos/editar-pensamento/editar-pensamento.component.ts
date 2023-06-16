@@ -15,7 +15,8 @@ export class EditarPensamentoComponent implements OnInit {
     id: 0,
     conteudo: '',
     autoria: '',
-    modelo: ''
+    modelo: '',
+    favorito: false
   }
 
   formulario: FormGroup;
@@ -30,28 +31,26 @@ export class EditarPensamentoComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
     this.service.buscarPorId(parseInt(id!)).subscribe((pensamento) => {
-      this.pensamento = pensamento
-    });
-
-    this.formulario = this.formBuilder.group({
-      conteudo: ['', Validators.compose([
-        Validators.required,
-        Validators.pattern(/(.|\s)*\S(.|\s)*/)
-      ])],
-      autoria: ['', Validators.compose([
-        Validators.required,
-        Validators.minLength(3)
-      ])],
-      modelo: ['modelo1']
+      this.formulario = this.formBuilder.group({
+        id: [pensamento.id],
+        conteudo: [pensamento.conteudo, Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/)
+        ])],
+        autoria: [pensamento.autoria, Validators.compose([
+          Validators.required,
+          Validators.minLength(3)
+        ])],
+        modelo: [pensamento.modelo],
+        favorito: [pensamento.favorito]
+      })
     })
   }
 
-  editarPensamento() {
-    if (this.formulario.valid) {
-      this.service.editar(this.formulario.value).subscribe(() => {
-        this.router.navigate(['/listarPensamento'])
-      })
-    }
+ editarPensamento() {
+    this.service.editar(this.formulario.value).subscribe(() => {
+      this.router.navigate(['/listarPensamento'])
+    })
   }
 
   cancelar() {

@@ -4,49 +4,57 @@
       "id": 1,
       "conteudo": "Testando a função de editar pensamento",
       "autoria": "teste edit",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": true
     },
     {
       "id": 2,
       "conteudo": "Estudando Angular",
       "autoria": "Dev Alura",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": true
     },
     {
       "id": 3,
       "conteudo": "Angular é o melhor'",
       "autoria": "Dev Alura",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
+      "id": 4,
       "conteudo": "Testando a função criar pensamento",
       "autoria": "teste ",
       "modelo": "modelo3",
-      "id": 4
+      "favorito": false
     },
     {
+      "id": 5,
       "conteudo": "olalla",
       "autoria": "teste",
       "modelo": "modelo1",
-      "id": 5
+      "favorito": false
     },
     {
+      "id": 6,
       "conteudo": "Teste Page",
       "autoria": "Teste Page",
       "modelo": "modelo1",
-      "id": 6
+      "favorito": false
     },
     {
+      "id": 7,
       "conteudo": "Teste Page",
       "autoria": "Teste Page",
       "modelo": "modelo2",
-      "id": 7
+      "favorito": false
     },
     {
+      "id": 8,
       "conteudo": "Teste Page",
       "autoria": "Teste Page",
       "modelo": "modelo3",
-      "id": 8
+      "favorito": false
     }
   ]
 }
